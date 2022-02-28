@@ -20,10 +20,9 @@ ee_1 = geemap.pandas_to_ee(pts_1, latitude="lat", longitude="lon")
 ee_2 = geemap.pandas_to_ee(pts_2, latitude="lat", longitude="lon")
 
 #get daily mean (can modify the date for other period)
-# This is very similar to pull monthly mean
 startDate= datetime.datetime(2020,1,1)
 # NO2_daily= pd.DataFrame(columns=['first','lon','lat'])
-for i in range(60,700,1): #(can modify the range for other period)
+for i in range(60,780,1): #(can modify the range for other period)
     date1 = (startDate + datetime.timedelta(days=i)).strftime('%Y-%m-%d')
     date2 = (startDate + datetime.timedelta(days=(i+1))).strftime('%Y-%m-%d')
     collection = ee.ImageCollection('COPERNICUS/S5P/NRTI/L3_NO2') \
@@ -39,7 +38,6 @@ for i in range(60,700,1): #(can modify the range for other period)
 #     df_2 = pd.read_csv(out_csv2)
 #     df = pd.concat([df_1, df_2])
 #     df['date'] = date1
-#     df['week_id'] = int(math.floor(i / 7)+1)
 #     NO2_daily= pd.concat([NO2_daily,df],ignore_index=True)
 # NO2_daily
 
