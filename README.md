@@ -13,4 +13,4 @@ data
 
 
 code
-* [NO2 extraction from Google Earth Engine](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/code/pull_NO2_from_GEE.py)
+* [NO2 extraction from Google Earth Engine](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/code/NO2_from_GEE.py)
