@@ -7,7 +7,8 @@ Our objectives:
 3. Compare the performance of CNN-LSTM with MLP (no spatial and temporal aspect), CNN(no temporal component
 
 data
-* [Study area](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/data/SEA_pts.csv)
+* [Study area](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/data/Points_locations/SEA_pts.csv)
+
 * [NO2 monthly mean values](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/data/NO2_raw_monthly/2020_2021_monthly_NO2.csv)
 
 
