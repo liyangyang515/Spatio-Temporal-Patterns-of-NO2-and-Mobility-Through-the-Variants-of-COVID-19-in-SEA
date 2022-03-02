@@ -6,11 +6,12 @@ Our objectives:
 2. Propose, Train and Develop a Spatio-temporal model (CNN-LSTM) for future NO2 level forecast and analysis. ​
 3. Compare the performance of CNN-LSTM with MLP (no spatial and temporal aspect), CNN(no temporal component
 
-data
+**Data**
 * [Study area](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/data/Points_locations/SEA_pts.csv)
 
-* [NO2 monthly mean values](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/data/NO2_raw_monthly/2020_2021_monthly_NO2.csv)
+* [NO2 monthly mean values](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/tree/main/data/NO2_SEA_Land/NO2_raw_monthly)
 
+* [NO2 daily mean values](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/tree/main/data/NO2_SEA_Land/NO2_raw_daily)
 
-code
-* [NO2 extraction from Google Earth Engine](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/code/NO2_from_GEE.py)
+**Code**
+* [NO2 extraction from Google Earth Engine](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/code/NO2_From_GEE_SEA.ipynb)
