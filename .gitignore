@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 data/facebook_mobility/facebook_mobility.csv
+data/weather_MLP.csv
