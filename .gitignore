@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 data/facebook_mobility/facebook_mobility.csv
 data/weather_MLP.csv
+data/weather.csv
+data/NO2_SEA_Land/NO2_raw_daily/2020_2021_daily_NO2.csv
+code/5219_data preprocessing_MLP.ipynb
+data/Preprocessed_data_ML.csv
