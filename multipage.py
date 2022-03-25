@@ -36,6 +36,10 @@ class MultiPage:
             self.pages, 
             format_func=lambda page: page['title']
         )
+        
+        # run the app function 
+        page['function']()
+
         st.sidebar.title("Contribute")
         st.sidebar.info(
             "This is an open source project and you are very welcome to contribute your "
@@ -45,5 +49,3 @@ class MultiPage:
             "to the [source code](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA). "
         )
         
-        # run the app function 
-        page['function']()
