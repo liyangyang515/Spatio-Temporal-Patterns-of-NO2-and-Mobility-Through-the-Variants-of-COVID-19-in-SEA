@@ -1,35 +1,44 @@
 import streamlit as st
 import pandas as pd
+import pydeck as pdk
 
 def app():
     st.header("")
     df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month.csv', index_col = 0)
     # st.title("")
     clist = df.columns.values.tolist()
-    color = st.sidebar.selectbox("Select color:",clist)
     year = st.sidebar.selectbox('select year', [2020, 2021])
-    month = st.sidebar.slider("select month", df[df['year']==year].values.tolist())
-    st.header("Mapping color in " + color + ' and ' + ' size in ' + size)
-    data = df[(df['year'] == year) & (df['month'] == month) ]
+    month = st.sidebar.slider("select month", 1, 12)
+    elevation = st.sidebar.selectbox('select elevation', clist)
+    color = st.sidebar.selectbox('select color', clist)
+    scale = st.sidebar.slider("select scale", 0.5, 50000.5, 10000.0)
+    # st.header("Mapping color in " + color + ' and ' + ' size in ' )
+    data = df[(df['year'] == year) & (df['month'] == month)]
     st.pydeck_chart(pdk.Deck(
-        map_style='mapbox://styles/mapbox/light-v9',
+        map_style='mapbox://styles/mapbox/light-v9',map_provider="mapbox",
+        # map_provider="mapbox",
+        # map_style=pdk.map_styles.SATELLITE,
         initial_view_state=pdk.ViewState(
-            latitude=-23.901,
-            longitude=-46.525,
-            zoom=5,
+            latitude=1,
+            longitude=105,
+            zoom=4,
             pitch=50
         ),
         layers=[
             pdk.Layer(
-                'Log_n_crisis'
+                'ColumnLayer',
                 data=data,
                 get_position='[lon, lat]',
-                get_elevation='[Log_n_crisis]',
-                radius=20000,
+                get_elevation= elevation,
+                get_fill_color = color,
+                radius=10000,
                 auto_highlight=True,
-                elevation_scale=100,
-                elevation_range=[0, 5000],
+                elevation_scale= scale,
+                elevation_range=[0, 1000],
                 pickable=True,
-                extruded=True)]
+                extruded=True,
+                coverage=1,
+            ),
+        ],
     ))
 
