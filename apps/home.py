@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 def app():
     st.markdown(
@@ -8,8 +9,19 @@ def app():
         [pull requests](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/pulls) to the [GitHub repository](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA).
         """
     )
+    df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month.csv', index_col = 0)
+    
+    def convert_df(df):
+        # IMPORTANT: Cache the conversion to prevent computation on every rerun
+        return df.to_csv().encode('utf-8')
 
-    st.info("Click on the left sidebar menu to navigate to the different apps.")
+    csv = convert_df(df)
+    st.info("Download data, or click on the left sidebar menu to navigate to the different apps.")
+    st.download_button(
+        label="Download data as CSV",
+        data=csv,
+        file_name='monthly_merge.csv',
+    )
 
     st.subheader("Some Visualisaition Examples")
     st.markdown(
@@ -18,11 +30,6 @@ def app():
     """
     )
 
-    # row1_col1, row1_col2 = st.columns(2)
-    # with row1_col1:
     st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graphs/NO2_ncrisis_map.png")
     st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graphs/scatter_NO2_ncrisis.png")
-
-    # with row1_col2:
     st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graphs/map3d.png")
-    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graphs/scatter_NO2_ncrisis.png")
