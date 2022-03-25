@@ -7,8 +7,8 @@ def app():
     clist = df.columns.values.tolist()
     x = st.sidebar.selectbox("Select x-axis variable:",clist)
     y = st.sidebar.selectbox("Select y-axis variable:",clist)
-    color = st.sidebar.selectbox("Select color:",clist)
-    fig = px.scatter(df, x , y , color = color, height = 600)
+    color = st.sidebar.selectbox("Select color:",clist)  
+    fig = px.scatter(df, x , y , color = color, marginal_x="histogram", marginal_y="rug", height = 600)
     st.plotly_chart(fig, use_container_width=True)
 
     
