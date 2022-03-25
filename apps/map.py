@@ -15,4 +15,4 @@ def app():
   maximum_size = st.sidebar.slider('maximum size' , 1, 15)
   st.header("Mapping color in " + color + ' and ' + ' size in ' + size)
   fig = px.scatter_mapbox(df, lat="lat", lon="lon", color = color, size = size, color_continuous_scale=px.colors.cyclical.IceFire, size_max = maximum_size, zoom = 3, width=800, height=600)
-  st.plotly_chart(fig)
+  st.plotly_chart(fig, use_container_width=True)

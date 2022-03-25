@@ -1,12 +1,11 @@
-from tkinter import Scale
 import streamlit as st
 import pandas as pd
 import pydeck as pdk
 
 def app():
-    st.header("")
+    # st.header("")
     df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month.csv', index_col = 0)
-    # st.title("")
+    st.header("The color shows the NO2 level! ")
     clist = df.columns.values.tolist()
     year = st.sidebar.selectbox('select year', [2020, 2021])
     month = st.sidebar.slider("select month", 1, 12)
