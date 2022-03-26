@@ -10,7 +10,7 @@ def app():
     year = st.sidebar.radio('select year', (2020, 2021))
     month = st.sidebar.slider("select month", 1, 12)
     elevation = st.sidebar.radio('select elevation', ('n_crisis', 'haze'))
-    scale = st.sidebar.slider("select scale", 0.5, 100, 1)
+    scale = st.sidebar.slider("select scale", 0.5, 100.0, 1.0)
     st.header("Mapping elevation in " + elevation + ' and ' + ' color in NO2 level')
     data = df[(df['year'] == year) & (df['month'] == month)]
 
