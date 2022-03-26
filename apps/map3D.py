@@ -5,13 +5,13 @@ import pydeck as pdk
 def app():
     # st.header("")
     df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month.csv', index_col = 0)
-    st.header("The color shows the NO2 level! ")
+    # st.subheader("The color shows the NO2 level! ")
     clist = df.columns.values.tolist()
-    year = st.sidebar.selectbox('select year', [2020, 2021])
+    year = st.sidebar.radio('select year', (2020, 2021))
     month = st.sidebar.slider("select month", 1, 12)
     elevation = st.sidebar.selectbox('select elevation', clist)
     scale = st.sidebar.slider("select scale", 0.5, 50000.5, 10000.0)
-    # st.header("Mapping color in " + color + ' and ' + ' size in ' )
+    st.header("Mapping elevation in " + elevation + ' and ' + ' color in NO2 level' )
     data = df[(df['year'] == year) & (df['month'] == month)]
 
     st.pydeck_chart(pdk.Deck(
