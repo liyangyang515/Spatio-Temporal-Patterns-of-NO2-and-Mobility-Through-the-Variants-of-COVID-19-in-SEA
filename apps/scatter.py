@@ -8,6 +8,7 @@ def app():
     x = st.sidebar.selectbox("Select x-axis variable:",clist)
     y = st.sidebar.selectbox("Select y-axis variable:",clist)
     color = st.sidebar.selectbox("Select color:",clist)  
+    st.header("PloT of " + y + ' vs. ' + x + ' and color represents ' + color)
     fig = px.scatter(df, x , y , color = color, marginal_x="histogram", marginal_y="rug", height = 600)
     st.plotly_chart(fig, use_container_width=True)
 

@@ -2,7 +2,7 @@ import streamlit as st
 
 # Custom imports 
 from multipage import MultiPage
-from apps import home, scatter, map, map3D
+from apps import home, map, scatter, map3D
 
 st.set_page_config(layout="wide")
 
@@ -14,8 +14,8 @@ st.title("Visualisation of NO2 and its influential factors in South-East Asia (2
 
 # Add all your applications (pages) here
 app.add_page("home", home.app)
-app.add_page("scatter", scatter.app)
 app.add_page("map", map.app)
+app.add_page("scatter", scatter.app)
 app.add_page("3Dmap", map3D.app)
 
 # The main app

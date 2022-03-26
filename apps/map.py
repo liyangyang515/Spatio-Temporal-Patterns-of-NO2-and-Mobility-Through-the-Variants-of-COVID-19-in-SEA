@@ -12,7 +12,9 @@ def app():
   clist = df.columns.values.tolist()
   color = st.sidebar.selectbox("Select color:",clist)
   size = st.sidebar.selectbox("Select size:",clist)
+  month_s, month_e = st.sidebar.slider('range of month' , 1, 12, (1, 12))
+  df_filter = df[(df['month']>= month_s)&(df['month']<= month_e)]
   maximum_size = st.sidebar.slider('maximum size' , 1, 15)
   st.header("Mapping color in " + color + ' and ' + ' size in ' + size)
-  fig = px.scatter_mapbox(df, lat="lat", lon="lon", color = color, size = size, color_continuous_scale=px.colors.cyclical.IceFire, size_max = maximum_size, zoom = 3, width=800, height=600)
+  fig = px.scatter_mapbox(df_filter, lat="lat", lon="lon", color = color, size = size, color_continuous_scale=px.colors.cyclical.IceFire, size_max = maximum_size, zoom = 3, width=800, height=600)
   st.plotly_chart(fig, use_container_width=True)
