@@ -23,13 +23,20 @@ def app():
         file_name='monthly_merge.csv',
     )
 
-    st.subheader("Some Visualisaition Examples")
+    st.header("Some Visualisaition Examples")
     st.markdown(
         """
         The following visualisaitions were created using this multi-page web app. 
     """
     )
-
+    st.subheader("1. Example using map app:")
+    st.write("NO2 Mapping")
+    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graphs/map_NO2.png")
+    st.write("Size indicates the facebook mobility level and color represents NO2 level")
     st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graphs/NO2_ncrisis_map.png")
+    st.subheader("2. Example using scatter app:")
+    st.write("NO2 vs. facebook mobility; color represents country")
     st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graphs/scatter_NO2_ncrisis.png")
+    st.subheader("3. Example using 3Dmap app:")
+    st.write("Elevation represents facebook mobility and color shows NO2 level")
     st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graphs/map3d.png")
