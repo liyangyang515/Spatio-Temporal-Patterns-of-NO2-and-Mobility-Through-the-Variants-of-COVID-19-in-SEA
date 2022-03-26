@@ -2,15 +2,20 @@ import streamlit as st
 import pandas as pd
 import pydeck as pdk
 
+
 def app():
     # st.header("")
     df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month.csv', index_col = 0)
     # st.subheader("The color shows the NO2 level! ")
-    clist = df.columns.values.tolist()
     year = st.sidebar.radio('select year', (2020, 2021))
     month = st.sidebar.slider("select month", 1, 12)
     elevation = st.sidebar.radio('select elevation', ('n_crisis', 'haze'))
     scale = st.sidebar.slider("select scale", 0.5, 100.0, 1.0)
+    st.markdown(
+    """
+        Note! Choose any month from 2020 Apr onwards! Facebook mobility is only available from 2020 Apr.
+    """
+    )
     st.header("Mapping elevation in " + elevation + ' and ' + ' color in NO2 level')
     data = df[(df['year'] == year) & (df['month'] == month)]
 
