@@ -4,6 +4,7 @@ import plotly.express as px
 
 
 def app():
+  st.title("Map Visualisation")
   #this is a public token
   mapbox_token = 'pk.eyJ1IjoibGl5YW5neWFuZzUxNSIsImEiOiJjbDBuNmM3MjEwdGZjM2t0NHRqbmJidXFjIn0.8O9DnGkHPecl4jjk1ZqQUQ'
   px.set_mapbox_access_token(mapbox_token)

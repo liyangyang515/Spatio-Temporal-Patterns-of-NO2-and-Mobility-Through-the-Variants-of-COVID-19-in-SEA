@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def app():
+    st.title("Visualisation of NO2 and its influential factors in South-East Asia (2020-2021)")
     st.markdown(
         """
         This multi-page web app demonstrates various interactive web apps created using [streamlit](https://streamlit.io), written purely in Python.
@@ -23,6 +24,7 @@ def app():
         data=csv,
         file_name='monthly_merge.csv',
     )
+    st.dataframe(df.head(50))
     with st.expander("See explanations of each parameter"):
         st.markdown("""
          **mobility**
@@ -34,13 +36,13 @@ def app():
          * surface-p: surface air pressure
          * 2m-temp: air temperature
          * dew-pt: dew point
+         * wind speed: calculated from u-wind and v-wind vectors
          **haze**
          **spatial information**
          * lon: longitude
          * lat: latitude
          **temporal information**
          * day: day number from the start (Apr 1, 2020)
-         **NO2 level**
          """)
     
     st.header("Some Visualisaition Examples")

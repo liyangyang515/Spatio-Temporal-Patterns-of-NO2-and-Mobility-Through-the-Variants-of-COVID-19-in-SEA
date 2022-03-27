@@ -14,6 +14,7 @@ import shap
 import matplotlib
 
 def app():    
+    st.title("Train and explain a model by visualising the impacts of influential factors on NO2 levels")
     df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month.csv', index_col = 0)
     layer_number = st.sidebar.number_input("Enter number of dense layers", min_value = 1, step =1)
     layer_node = st.sidebar.number_input("Enter number of nodes in each dense layer",  min_value = 1, step =1)
