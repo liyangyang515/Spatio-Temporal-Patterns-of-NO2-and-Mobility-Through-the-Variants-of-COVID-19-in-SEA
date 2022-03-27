@@ -3,5 +3,5 @@ tensorflow==2.5.0
 keras==2.6.0   
 scikit-learn==1.0.2 
 shap==0.40.0     
-matplotlib-base==3.5.1           
-matplotlib-inline==0.1.2  
+matplotlib-base         
+matplotlib-inline
