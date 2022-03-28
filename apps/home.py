@@ -28,11 +28,11 @@ def app():
     with st.expander("See explanations of each parameter"):
         st.markdown("""
          **mobility**
-         * n_crisis: facebook mobility level
-         * driving: apple mobility with driving mode
-         * walking: apple mobility with walking mode
+         * facebook_movement: facebook mobility level
+         * apple_driving: apple mobility with driving mode
+         * apple_walking: apple mobility with walking mode
          **weather**
-         * tp: rainfall
+         * rainfall: hourly rainfall
          * surface-p: surface air pressure
          * 2m-temp: air temperature
          * dew-pt: dew point

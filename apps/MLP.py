@@ -20,7 +20,7 @@ def app():
     layer_node = st.sidebar.number_input("Enter number of nodes in each dense layer",  min_value = 1, step =1)
     batch_size = st.sidebar.number_input("Enter batch_size:",  min_value = 0, step =100)
     epoch = st.sidebar.number_input("Enter number of epoches:",  min_value = 0, step =10)
-    before_normalized_X = df[['lon','lat','day', 'tp','u-wind', 'v-wind', 'wind_speed', 'surface-p', 'dew-pt', '2m-temp', 'n_crisis', 'log_n_crisis', 'driving', 'walking', 'haze']]
+    before_normalized_X = df[['lon','lat','day', 'rainfall','u-wind', 'v-wind', 'wind_speed', 'surface-p', 'dew-pt', '2m-temp', 'facebook_movement', 'log_facebook_movement', 'apple_driving', 'apple_walking', 'haze']]
     sc = StandardScaler()
     sc_X = sc.fit(before_normalized_X)
     after_normalized_X = sc_X.transform(before_normalized_X)
@@ -71,7 +71,7 @@ def app():
             st.pyplot(fig1, bbox_inches='tight')
         with st.expander("See the dependence plot of facebook mobility's impacts and how the apple driving mobility interactes with it"):
             st.markdown(""" **dependence plot** """)
-            fig2 = shap.dependence_plot('log_n_crisis', shap_values[0], X_test[:number], interaction_index = 'driving', feature_names = feature_names)
+            fig2 = shap.dependence_plot('log_facebook_movement', shap_values[0], X_test[:number], interaction_index = 'apple_driving', feature_names = feature_names)
             st.pyplot(fig2, bbox_inches='tight') 
 
                     

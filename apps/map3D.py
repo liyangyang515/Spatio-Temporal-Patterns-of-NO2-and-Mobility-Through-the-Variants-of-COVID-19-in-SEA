@@ -9,7 +9,7 @@ def app():
     # st.subheader("The color shows the NO2 level! ")
     year = st.sidebar.radio('select year', (2020, 2021))
     month = st.sidebar.slider("select month", 1, 12)
-    elevation = st.sidebar.radio('select elevation', ('n_crisis', 'haze'))
+    elevation = st.sidebar.radio('select elevation', ('facebook_movement', 'haze'))
     scale = st.sidebar.slider("select scale", 0.5, 100.0, 1.0)
     st.markdown(
     """

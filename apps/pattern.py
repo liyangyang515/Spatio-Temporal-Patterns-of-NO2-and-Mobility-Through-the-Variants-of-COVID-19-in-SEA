@@ -18,7 +18,7 @@ def app():
     clist = df2['pattern'].unique().tolist()
     pattern = st.selectbox("Select interested pattern:",clist)
     df_filter = df2[(df2['pattern']== pattern)]   
-    st.subheader("Plot of " + 'NO2' + ' with time for the selected patter, color represents country')
+    st.subheader("Plot of " + 'NO2' + ' with time for the selected ' + pattern + 'pattern, color represents country')
     with st.expander("change chart type for marginal y"):        
         marginal_y = st.radio(':', ('histogram','rug', 'box', 'violin' ))
     fig2 = px.scatter(df_filter, y="NO2", x="week_id", marginal_y  = marginal_y, color = 'country', hover_data = ['country'], color_continuous_scale=px.colors.cyclical.IceFire)
