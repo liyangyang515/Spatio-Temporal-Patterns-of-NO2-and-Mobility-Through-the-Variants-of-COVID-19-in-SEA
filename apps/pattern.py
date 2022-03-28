@@ -8,34 +8,18 @@ def app():
     mapbox_token = 'pk.eyJ1IjoibGl5YW5neWFuZzUxNSIsImEiOiJjbDBuNmM3MjEwdGZjM2t0NHRqbmJidXFjIn0.8O9DnGkHPecl4jjk1ZqQUQ'
     px.set_mapbox_access_token(mapbox_token)
     # st.header("")
-    df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/Emerging_hot_spots/correlation.csv')
+    # df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/Emerging_hot_spots/correlation.csv')
     # st.title("")
-    row1_col1, row1_col2 = st.columns([2, 1])
-    width = 950
-    height = 600
+    df2 = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/Emerging_hot_spots/data.csv')
+    
+    fig1 = px.scatter_mapbox(df2, lat="lat", lon="lon", color = 'pattern', hover_data = ['country'], color_continuous_scale=px.colors.cyclical.IceFire, zoom = 2)
+    st.plotly_chart(fig1, use_container_width=True)
 
-    with row1_col1:
-
-        fig = px.scatter_mapbox(df, lat="lat", lon="lon", color = 'pearson', size = '100/p', color_continuous_scale=px.colors.cyclical.IceFire, size_max = maximum_size, zoom = 3, width=800, height=600)
-        st.plotly_chart(fig, use_container_width=True)
-
-
-
-
-#   clist = df.columns.values.tolist()
-#   color = st.sidebar.selectbox("Select color:",clist)
-#   month_s, month_e = st.sidebar.slider('range of month' , 1, 12, (1, 12))
-#   df_filter = df[(df['month']>= month_s)&(df['month']<= month_e)]
-#   # size_B = st.sidebar.radio("Do you want to set size as variable:",['Yes', 'No'])
-#   agree = st.sidebar.checkbox('I also want to set size as a variable')
-#   if agree:
-#     size = st.sidebar.selectbox("Select size:",clist)
-#     maximum_size = st.sidebar.slider('maximum size' , 1, 15)
-#     st.header("Mapping color in " + color + ' and ' + ' size in ' + size)
-#     fig = px.scatter_mapbox(df_filter, lat="lat", lon="lon", color = color, size = size, color_continuous_scale=px.colors.cyclical.IceFire, size_max = maximum_size, zoom = 3, width=800, height=600)
-#   else:
-#     fig = px.scatter_mapbox(df_filter, lat="lat", lon="lon", color = color, color_continuous_scale=px.colors.cyclical.IceFire, zoom = 3, width=800, height=600)
-#     st.header("Mapping color in " + color)
-
-#   st.plotly_chart(fig, use_container_width=True)
-
+    clist = df2['pattern'].unique().tolist()
+    pattern = st.selectbox("Select interested pattern:",clist)
+    df_filter = df2[(df2['pattern']== pattern)]   
+    st.subheader("Plot of " + 'NO2' + ' with time for the selected patter, color represents country')
+    with st.expander("change chart type for marginal y"):        
+        marginal_y = st.radio(':', ('histogram','rug', 'box', 'violin' ))
+    fig2 = px.scatter(df_filter, y="NO2", x="week_id", marginal_y  = marginal_y, color = 'country', hover_data = ['country'], color_continuous_scale=px.colors.cyclical.IceFire)
+    st.plotly_chart(fig2, use_container_width=True)

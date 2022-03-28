@@ -9,8 +9,13 @@ def app():
     x = st.sidebar.selectbox("Select x-axis variable:",clist)
     y = st.sidebar.selectbox("Select y-axis variable:",clist)
     color = st.sidebar.selectbox("Select color:",clist)  
-    st.header("Plot of " + y + ' vs. ' + x + ' and color represents ' + color)
-    fig = px.scatter(df, x , y , color = color, marginal_x="histogram", marginal_y="rug", height = 600)
+    st.subheader("Plot of " + y + ' vs. ' + x + ', color represents ' + color)
+    with st.expander("change chart type for marginal x"):
+        marginal_x = st.radio('', ('histogram','rug', 'box', 'violin' ))
+    with st.expander("change chart type for marginal y"):        
+        marginal_y = st.radio(':', ('histogram','rug', 'box', 'violin' ))
+
+    fig = px.scatter(df, x , y , color = color, marginal_x = marginal_x, marginal_y  = marginal_y, height = 600)
     st.plotly_chart(fig, use_container_width=True)
 
     

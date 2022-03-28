@@ -60,7 +60,7 @@ def app():
         st.set_option('deprecation.showPyplotGlobalUse', False)
         shap.initjs()
         feature_names = before_normalized_X.columns
-        explainer = shap.DeepExplainer(model, X_train[:3000])
+        explainer = shap.DeepExplainer(model, X_train[:2000])
         shap_values = explainer.shap_values(X_test[:number])
             # init the JS visualization code
             # The summary plot shows the most important features and the magnitude of their impact on the model. 
@@ -73,6 +73,7 @@ def app():
             st.markdown(""" **dependence plot** """)
             fig2 = shap.dependence_plot('log_n_crisis', shap_values[0], X_test[:number], interaction_index = 'driving', feature_names = feature_names)
             st.pyplot(fig2, bbox_inches='tight') 
+
                     
                 
                
