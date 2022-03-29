@@ -12,7 +12,7 @@ def app():
         """
     )
 
-    df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month.csv', index_col = 0)
+    df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month_all.csv', index_col = 0)
     
     def convert_df(df):
         # IMPORTANT: Cache the conversion to prevent computation on every rerun
@@ -44,6 +44,8 @@ def app():
          * lat: latitude
          **temporal information**
          * day: day number from the start (Apr 1, 2020)
+         ** stringency_index: government policy restriction level (max 100); not in MLP model
+         ** case_number: number of newly confirmed cases; not in MLP model
          """)
     
     st.header("Some Visualisaition Examples")
@@ -55,7 +57,10 @@ def app():
     mapbox_token = 'pk.eyJ1IjoibGl5YW5neWFuZzUxNSIsImEiOiJjbDBuNmM3MjEwdGZjM2t0NHRqbmJidXFjIn0.8O9DnGkHPecl4jjk1ZqQUQ'
     px.set_mapbox_access_token(mapbox_token)
     st.subheader("1. Example using timeline app:")
-    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/facebook_SI_Timeline.png")
+    fig0 = px.scatter(df[df['year']== 2021], x='month', y = 'log_facebook_movement', color = 'stringency_index', size = 'NO2', facet_col='country', facet_col_wrap=4 )
+    # fig = px.scatter(df_melt, x , y , color = color, marginal_x = marginal_x, marginal_y  = marginal_y, height = 600)
+    st.plotly_chart(fig0, use_container_width=True)
+    # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/facebook_SI_Timeline.png")
     st.subheader("2. Example using map app:")
     st.write("NO2 Mapping")
     # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_NO2.png")
