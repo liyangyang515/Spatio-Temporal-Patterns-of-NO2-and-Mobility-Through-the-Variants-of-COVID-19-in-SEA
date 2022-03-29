@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 def app():
     st.title("Visualisation of NO2 and its influential factors in South-East Asia (2020-2021)")
@@ -51,20 +52,33 @@ def app():
         The following visualisaitions were created using this multi-page web app. 
     """
     )
-    st.subheader("1. Example using map app:")
+    mapbox_token = 'pk.eyJ1IjoibGl5YW5neWFuZzUxNSIsImEiOiJjbDBuNmM3MjEwdGZjM2t0NHRqbmJidXFjIn0.8O9DnGkHPecl4jjk1ZqQUQ'
+    px.set_mapbox_access_token(mapbox_token)
+    st.subheader("1. Example using timeline app:")
+    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/facebook_SI_Timeline.png")
+    st.subheader("2. Example using map app:")
     st.write("NO2 Mapping")
-    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_NO2.png")
+    # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_NO2.png")
+    fig1 = px.scatter_mapbox(df, lat="lat", lon="lon", color = 'log_NO2', size = 'log_NO2', size_max= 3, color_continuous_scale=px.colors.cyclical.IceFire, zoom = 3, width=800, height=600)
+    st.plotly_chart(fig1, use_container_width=True)
     st.write("Facebook Mobility Mapping")
-    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_n_crisis.png")
+    fig2 = px.scatter_mapbox(df, lat="lat", lon="lon", color = 'log_facebook_movement', size = 'log_facebook_movement', size_max = 4, color_continuous_scale=px.colors.cyclical.IceFire, zoom = 3, width=800, height=600)
+    # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_n_crisis.png")
+    st.plotly_chart(fig2, use_container_width=True) 
     st.write("Mapping facebook mobility in size and color in NO2 level")
-    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/NO2_ncrisis_map.png")
-    st.subheader("2. Example using scatter app:")
+    fig3 = px.scatter_mapbox(df, lat="lat", lon="lon", color = 'log_NO2', size ='facebook_movement', size_max = 15, color_continuous_scale=px.colors.cyclical.IceFire, zoom = 3, width=800, height=600)
+    # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_n_crisis.png")
+    st.plotly_chart(fig3, use_container_width=True) 
+    # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/NO2_ncrisis_map.png")
+    st.subheader("3. Example using scatter app:")
     st.write("NO2 vs. facebook mobility; color represents country")
-    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/scatter_NO2_ncrisis.png")
-    st.subheader("3. Example using 3Dmap app:")
+    fig4 = px.scatter(df, x = 'log_NO2' , y = 'log_facebook_movement' , color = 'country', marginal_x = 'histogram', marginal_y = 'rug', height = 600)
+    st.plotly_chart(fig4, use_container_width=True)
+    # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/scatter_NO2_ncrisis.png")
+    st.subheader("4. Example using 3Dmap app:")
     st.write("Elevation represents facebook mobility and color shows NO2 level")
     st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map3d.png")
-    st.subheader("4. Example using Train a model app:")
+    st.subheader("5. Example using Train a model app:")
     st.write("After training a model, we can take a look at the impacts of different parameters on NO2")
     st.markdown(""" ### Summary plot """)
     st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/Summary_shap.png")
