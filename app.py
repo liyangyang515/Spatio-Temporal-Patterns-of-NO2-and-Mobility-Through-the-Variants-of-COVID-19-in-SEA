@@ -2,7 +2,7 @@ import streamlit as st
 
 # Custom imports 
 from multipage import MultiPage
-from apps import home, map, scatter, map3D, MLP, pattern
+from apps import home, timeline, map, scatter, map3D, MLP, pattern
 
 st.set_page_config(layout="wide")
 
@@ -14,6 +14,7 @@ app = MultiPage()
 
 # Add all your applications (pages) here
 app.add_page("Home", home.app)
+app.add_page("Timeline", timeline.app)
 app.add_page("Map", map.app)
 app.add_page("Scatter", scatter.app)
 app.add_page("3Dmap", map3D.app)
