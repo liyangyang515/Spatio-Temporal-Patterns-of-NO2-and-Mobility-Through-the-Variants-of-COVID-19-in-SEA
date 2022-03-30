@@ -57,7 +57,7 @@ def app():
     mapbox_token = 'pk.eyJ1IjoibGl5YW5neWFuZzUxNSIsImEiOiJjbDBuNmM3MjEwdGZjM2t0NHRqbmJidXFjIn0.8O9DnGkHPecl4jjk1ZqQUQ'
     px.set_mapbox_access_token(mapbox_token)
     st.subheader("1. Example using timeline app:")
-    st.write("See how facebook mobility, stringency index (in color) and NO2 (in size) change with time.")   
+    st.write("See how facebook mobility and NO2 (in color) change with time.")   
     fig0 = px.scatter(df[df['country']=='Indonesia'], x='date', y = 'log_facebook_movement', color = 'log_NO2', size = 'log_NO2')
     # fig = px.scatter(df_melt, x , y , color = color, marginal_x = marginal_x, marginal_y  = marginal_y, height = 600)
     st.plotly_chart(fig0, use_container_width=True)
