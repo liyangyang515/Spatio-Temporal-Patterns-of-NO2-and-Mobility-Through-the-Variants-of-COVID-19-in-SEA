@@ -7,7 +7,7 @@ def app():
     st.header("3D Map Visualisation")
     df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month.csv', index_col = 0)
     # st.subheader("The color shows the NO2 level! ")
-    year = st.sidebar.radio('select year', (2020, 2021))
+    year = st.sidebar.radio('select year', (2020, 2021), 1)
     month = st.sidebar.slider("select month", 1, 12)
     elevation = st.sidebar.radio('select elevation', ('facebook_movement', 'haze'))
     scale = st.sidebar.slider("select scale", 0.5, 100.0, 1.0)
