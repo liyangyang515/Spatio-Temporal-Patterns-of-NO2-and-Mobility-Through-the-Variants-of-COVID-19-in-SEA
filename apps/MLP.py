@@ -69,8 +69,6 @@ def app():
             st.markdown(""" **summary plot** """)
             fig1 = shap.summary_plot(shap_values[0], plot_type = 'bar', feature_names = feature_names)
             st.pyplot(fig1, bbox_inches='tight')
-            fig2 = shap.summary_plot(shap_values[0], feature_names = feature_names)
-            st.pyplot(fig1, bbox_inches='tight')
         with st.expander("See the dependence plot of facebook mobility's impacts and how the apple driving mobility interactes with it"):
             st.markdown(""" **dependence plot** """)
             fig2 = shap.dependence_plot('log_facebook_movement', shap_values[0], X_test[:number], interaction_index = 'apple_driving', feature_names = feature_names)

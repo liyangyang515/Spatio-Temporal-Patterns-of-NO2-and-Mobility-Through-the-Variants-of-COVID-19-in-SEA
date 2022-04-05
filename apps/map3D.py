@@ -9,14 +9,12 @@ def app():
     # st.subheader("The color shows the NO2 level! ")
     year = st.sidebar.radio('select year', (2020, 2021), 1)
     month = st.sidebar.slider("select month", 1, 12)
-    elevation = st.sidebar.radio('select elevation', ('facebook_movement', 'haze'))
-    scale = st.sidebar.slider("select scale", 0.5, 100.0, 1.0)
     st.markdown(
     """
         Note! Choose any month from 2020 Apr onwards! Facebook mobility is only available from 2020 Apr.
     """
     )
-    st.header("Mapping elevation in " + elevation + ' and ' + ' color in NO2 level')
+    st.header('Mapping elevation in facebook_movement and color in NO2 level')
     data = df[(df['year'] == year) & (df['month'] == month)]
 
     st.pydeck_chart(pdk.Deck(
@@ -34,11 +32,11 @@ def app():
                 'ColumnLayer',
                 data=data,
                 get_position='[lon, lat]',
-                get_elevation= elevation,
+                get_elevation= 'facebook_movement',
                 get_fill_color = '[500/log_NO2, 500/log_NO2, 255]',
                 radius = 17500,
                 auto_highlight = True,
-                elevation_scale= scale,
+                elevation_scale= 1,
                 elevation_range=[0, 1000],
                 pickable=True,
                 extruded=True,

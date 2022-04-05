@@ -6,7 +6,7 @@ def app():
     st.title("Timeline Visualisation")
     df = pd.read_csv('https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/data/merge_by_month_all.csv', index_col = 0)
     clist1 = ['stringency_index', 'new_cases', 'facebook_movement', 'NO2', 'log_facebook_movement', 'log_NO2']
-    clist = df['country'].unique()
+    # clist = df['country'].unique()
     y = st.sidebar.selectbox("Select y:",clist1, 4)
     # color = st.sidebar.selectbox("Select 2nd y:",clist)
     df_group = df.groupby(['date', 'country']).mean().reset_index()

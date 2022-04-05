@@ -13,9 +13,9 @@ def app():
     with st.expander("change chart type for marginal x"):
         marginal_x = st.radio('', ('histogram','rug', 'box', 'violin' ), 0)
     with st.expander("change chart type for marginal y"):        
-        marginal_y = st.radio(':', ('histogram','rug', 'box', 'violin' ), 1)
+        marginal_y = st.radio('', ('histogram','rug', 'box', 'violin' ), 1)
 
-    fig = px.scatter(df, x , y , color = color, marginal_x = marginal_x, marginal_y  = marginal_y, height = 600)
+    fig = px.scatter(df[df['date']>'2021-04-02'], x , y , color = color, marginal_x = marginal_x, marginal_y  = marginal_y, height = 600)
     st.plotly_chart(fig, use_container_width=True)
 
     
