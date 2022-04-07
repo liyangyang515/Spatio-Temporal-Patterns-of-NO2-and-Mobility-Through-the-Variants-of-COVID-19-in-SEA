@@ -14,7 +14,24 @@ To run our web app locally:
 streamlit run app.py
 ```
 <br>
+
+Here is some visualisation examples from **[web app](https://share.streamlit.io/liyangyang515/spatio-temporal-patterns-of-no2-and-mobility-through-the-variants-of-covid-19-in-sea/main/app.py)**
+
+<br>
+
+![scatter](https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/scatter_NO2_ncrisis.png)
+
+![NO2map](https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_NO2.png)
+
+![Mobilitymap](https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_n_crisis.png)
+
+![NO2_Mobilitymap](https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/NO2_ncrisis_map.png)
+
 ![3Dmap](https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map3d.png)
+
+![SummaryPlot](https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/summary_bar.png)
+
+![DependencePlot](https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/log_n_crisis_shap.png)
 
 
 In this project, we aim to investigate the **Impact of Covid-19 on Spatial-Temporal Variation of NO2 Levels and Its Sensitivity to Mobility in South-East Asia**.
