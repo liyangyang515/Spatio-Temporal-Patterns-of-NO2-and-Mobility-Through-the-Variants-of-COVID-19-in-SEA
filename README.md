@@ -28,26 +28,25 @@ In this project, we aim to investigate the **Impact of Covid-19 on Spatial-Tempo
 <br>
 
 **Code**
-* This [code](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/code/NO2_From_GEE_SEA.ipynb) shows how NO2 data can be pulled from Google Earth Engine using geemap
+* [NO2 data pulled from Google Earth Engine using geemap](https://github.com/liyangyang515/NO2-in-South-East-Asia-_GE5219/blob/main/code/NO2_From_GEE_SEA.ipynb)  
 
-* This code 
+* [Haze searches from Google Trends using pytrends](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/haze.ipynb)
 
-* This [code](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/5219_data%20preprocessing_MLP.ipynb) shows how all the daily data can be merged before MLP modelling
+* [Merge data before MLP](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/5219_data%20preprocessing_MLP.ipynb)
 
-* This code 
+* [Data preprocessing, MLP and explainability](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/5219_MLP_Explainability.ipynb)
 
-* This code 
 
 <br>
 
 **App**
-* The [app folder](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/tree/main/apps) collects all different apps that were used in the [multi-page app](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/app.py)
+* The [app folder](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/tree/main/apps) collects all different apps written in pure python that were used in the [multi-page app](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/app.py)
 
 <br>
 
 **Python Packages/Libraries utilised**
 Some of which are really impressive and can be used in most fields:
-* Data pulling and pre-preprocessing: [Pandas](https://pandas.pydata.org/docs/index.html), [Numpy](https://numpy.org/doc/stable/), [geemap](https://geemap.org/), [pytrends](https://pypi.org/project/pytrends/)
+* Data pulling and pre-preprocessing: [pandas](https://pandas.pydata.org/docs/index.html), [Numpy](https://numpy.org/doc/stable/), [geemap](https://geemap.org/), [pytrends](https://pypi.org/project/pytrends/)
 
 * Model and its explanabiltiy: [keras](https://keras.io/), [tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/), [shap](https://shap.readthedocs.io/en/latest/index.html)
 
