@@ -14,6 +14,9 @@ To run our web app locally:
 streamlit run app.py
 ```
 <br>
+![3Dmap](https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map3d.png)
+
+
 In this project, we aim to investigate the **Impact of Covid-19 on Spatial-Temporal Variation of NO2 Levels and Its Sensitivity to Mobility in South-East Asia**.
 
 <br>
