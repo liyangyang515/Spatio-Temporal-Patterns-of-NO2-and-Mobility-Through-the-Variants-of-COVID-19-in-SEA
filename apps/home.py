@@ -44,10 +44,20 @@ def app():
          * lat: latitude
          **temporal information**
          * day: day number from the start (Apr 1, 2020)
-         ** stringency_index: government policy restriction level (max 100); not in MLP model
-         ** case_number: number of newly confirmed cases; not in MLP model
+         **stringency_index: government policy restriction level (max 100); not in MLP model
+         **case_number: number of newly confirmed cases; not in MLP model
          """)
+    row1_col1, row1_col2 = st.columns(2)
+    with row1_col1:
+        st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/demo_scatter.gif")
+        st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/demo_timeline.gif")
+
+    with row1_col2:
+        st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/demo_map3d.gif")
+        st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/demo_map.gif")
     
+    st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/demo_model.gif")
+
     st.header("Some Visualisaition Examples")
     st.markdown(
         """
@@ -73,7 +83,6 @@ def app():
     st.plotly_chart(fig2, use_container_width=True) 
     st.write("Mapping facebook mobility in size and color in NO2 level")
     fig3 = px.scatter_mapbox(df, lat="lat", lon="lon", color = 'log_NO2', size ='facebook_movement', hover_data = ['country'], size_max = 15, color_continuous_scale=px.colors.cyclical.IceFire, zoom = 3, width=800, height=600)
-    # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/map_n_crisis.png")
     st.plotly_chart(fig3, use_container_width=True) 
     # st.image("https://raw.githubusercontent.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/main/graph/NO2_ncrisis_map.png")
     st.subheader("3. Example using scatter app:")
