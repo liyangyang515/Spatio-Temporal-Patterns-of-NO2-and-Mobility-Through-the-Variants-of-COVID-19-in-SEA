@@ -6,7 +6,7 @@ def app():
     st.title("Visualisation of NO2 and its influential factors in South-East Asia (2020-2021)")
     st.markdown(
         """
-        This multi-page web app demonstrates various interactive web apps created using [streamlit](https://streamlit.io), written purely in Python.
+        This multi-page web app demonstrates various interactive web apps created using [streamlit](https://streamlit.io), written purely in Python. Here is the [storymap](https://storymaps.arcgis.com/stories/28655bd2a29e4d2481feeccd47bc6575) if you want to know more about our study.
         This is an open-source project and you are very welcome to contribute your comments, questions, resources, and apps as [issues](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/issues) or 
         [pull requests](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/pulls) to the [GitHub repository](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA).
         """
