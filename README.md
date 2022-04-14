@@ -5,7 +5,7 @@
         
 <br>
 
-Feel free to go to our **[storymap](https://storymaps.arcgis.com/stories/28655bd2a29e4d2481feeccd47bc6575)**, our **[web app](https://share.streamlit.io/liyangyang515/spatio-temporal-patterns-of-no2-and-mobility-through-the-variants-of-covid-19-in-sea/main/app.py)** and our **online map layers** for more comprehensive information and references.
+Feel free to go to our **[storymap](https://storymaps.arcgis.com/stories/28655bd2a29e4d2481feeccd47bc6575)**, our **[web app](https://share.streamlit.io/liyangyang515/spatio-temporal-patterns-of-no2-and-mobility-through-the-variants-of-covid-19-in-sea/main/app.py)** and our **[online map layers](https://msc2021.maps.arcgis.com/home/webscene/viewer.html?webscene=1eb83c7a2fb24b5b902b6e0dbd052901)** for more comprehensive information and references.
 
 <br>
 
@@ -36,11 +36,13 @@ In this project, we aim to investigate the **Impact of Covid-19 on Spatial-Tempo
 <br>
 
 ### **Our objectives:**
-1. Identify the temporal changes of NO 2  and mobility throughout the three waves of COVID-19 (Mar 2020 - Feb 2022) in Indonesia
+This study thus aims to  
 
-2. Evaluate the spatio-temporal patterns in NO 2  level and mobility in the entire SEA throughout Delta and Omicron (Jun 2021 - Feb 2022) using Space-time Cube (STC) and emerging hotspot analysis ​
+1. Identify the temporal changes of NO2 and mobility throughout the three waves of COVID-19 (Mar 2020 – Feb 2022) in Indonesia
 
-3. Develop a machine learning model to predict NO 2  for SEA and assess the sensitivity of NO 2  to key influencing factors
+2. Evaluate the spatio-temporal patterns of NO2 level and mobility in the entire SEA throughout Delta and Omicron (Jun 2021– Feb 2022) using space time cube and emerging hotspot analysis 
+
+3. Develop a machine learning model to predict NO2 for SEA and assess the sensitivity of NO2 to key influencing factors
 
 <br>
 
