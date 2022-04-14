@@ -36,7 +36,6 @@ In this project, we aim to investigate the **Impact of Covid-19 on Spatial-Tempo
 <br>
 
 ### **Our objectives:**
-This study thus aims to  
 
 1. Identify the temporal changes of NO2 and mobility throughout the three waves of COVID-19 (Mar 2020 – Feb 2022) in Indonesia
 
@@ -55,7 +54,7 @@ This study thus aims to
 
 * [Haze searches from Google Trends using pytrends](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/haze_from_pytrends.ipynb)
 
-* [Merge all data before MLP](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/5219_data%20preprocessing_MLP.ipynb)
+* [Merge all data before multi-layer perceptron (MLP) modelling](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/5219_data%20preprocessing_MLP.ipynb)
 
 * [Data preprocessing, MLP and explainability](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/5219_MLP_Explainability.ipynb)
 
