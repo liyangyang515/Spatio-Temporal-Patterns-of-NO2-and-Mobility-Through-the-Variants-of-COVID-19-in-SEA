@@ -53,7 +53,7 @@ This study thus aims to
 
 * [Plotting NO2 and facebook mobility for Indonesia](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/Line_graph.ipynb) 
 
-* [Haze searches from Google Trends using pytrends](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/haze.ipynb)
+* [Haze searches from Google Trends using pytrends](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/haze_from_pytrends.ipynb)
 
 * [Merge all data before MLP](https://github.com/liyangyang515/Spatio-Temporal-Patterns-of-NO2-and-Mobility-Through-the-Variants-of-COVID-19-in-SEA/blob/main/code/5219_data%20preprocessing_MLP.ipynb)
 
