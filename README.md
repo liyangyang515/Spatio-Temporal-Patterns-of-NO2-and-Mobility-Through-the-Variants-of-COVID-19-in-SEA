@@ -72,6 +72,6 @@ In this project, we aim to investigate the **Impact of Covid-19 on Spatial-Tempo
 Some of which are really impressive and can be used in most fields:
 * Data pulling and pre-preprocessing: [pandas](https://pandas.pydata.org/docs/index.html), [Numpy](https://numpy.org/doc/stable/), [geemap](https://geemap.org/), [pytrends](https://pypi.org/project/pytrends/)
 
-* Model and its explanabiltiy: [keras](https://keras.io/), [tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/), [shap](https://shap.readthedocs.io/en/latest/index.html)
+* Model and its explanabiltiy: [Keras](https://keras.io/), [Tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/), [SHAP](https://shap.readthedocs.io/en/latest/index.html)
 
-* Visualisation: [matplotlib](https://matplotlib.org/), [plotly](https://plotly.com/), [pydeck](https://deckgl.readthedocs.io/en/latest/), [streamlit](https://streamlit.io/)
+* Visualisation: [matplotlib](https://matplotlib.org/), [plotly](https://plotly.com/), [pydeck](https://deckgl.readthedocs.io/en/latest/), [Streamlit](https://streamlit.io/)
